@@ -15,4 +15,8 @@
 对用户都约束了访问控制，后台授权管理
 
 ### 截图
-![图片alt](图片地址 ''图片title'')
+首页
+![首页截图](https://github.com/MemetaliSemet/Examination_registration_system/blob/master/%E6%88%AA%E5%9B%BE/000.JPG)
+
+报名信息
+![首页截图](https://github.com/MemetaliSemet/Examination_registration_system/blob/master/%E6%88%AA%E5%9B%BE/003.JPG)
