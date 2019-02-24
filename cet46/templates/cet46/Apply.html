@@ -1,0 +1,19 @@
+{% extends 'cet46/base.html' %}
+
+{% block content %}
+
+    <p>CetTopics</p>
+
+    <ul>
+
+      {% for topi in topic %}
+          <li>
+             <p><a href="{% url 'cet46:personal_info' %}">{{ topi }}</a></p>
+              <p><a href="{% url 'cet46:CetForms' topi.id %}">{{ topi }}</a></p>
+          </li>
+{#      {% empty %}#}
+{#          <li>No CetTopics have been added yet.</li>#}
+      {% endfor %}
+    </ul>
+
+{% endblock content %}

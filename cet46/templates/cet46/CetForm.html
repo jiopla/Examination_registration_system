@@ -1,0 +1,130 @@
+{% extends 'cet46/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title">报名考试</h3>
+        </div>
+        <div class="panel-body">
+
+            <div class="alert alert-warning" role="alert">
+              请填写个人信息
+            </div>
+            <form method="post" action="{% url 'cet46:CetForms' topi_id %}" class="post">
+                {% csrf_token %}
+                <p><input type="text" name="username" placeholder="用户名"></p>
+                <p><input type="text" name="user_id" placeholder="身份证号"></p>
+                <p>
+                    男<input type="radio" name="gender" value="1">
+                    女<input type="radio" name="gender" value="0">
+                </p>
+                <p><input type="text" name="age" placeholder="年龄"></p>
+                <p><input type="text" name="phone" placeholder="手机号"></p>
+                <p><input type="text" name="school" placeholder="学校"></p>
+                <p><input type="text" name="addr" placeholder="住址"></p>
+
+{#                <button type="submit">上传</button>#}
+{#                <button type="submit" class="btn btn-primary">提交信息</button>#}
+                <p><input type="submit"  class="input-group" value="提交信息"></p>
+            </form>
+
+        </div>
+    </div>
+
+{#    <form class="form-horizontal">#}
+{#    <fieldset>#}
+{#      <div id="legend" class="">#}
+{#        <legend class="">报名考试----个人信息</legend>#}
+{#      </div>#}
+{#    <div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">姓名</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="输入姓名" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">身份证号</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="输入身份证号" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{#          <label class="control-label">性别</label>#}
+{#          <div class="controls">#}
+{#      <!-- Inline Radios -->#}
+{#      <label class="radio inline">#}
+{#        <input value="男" name="group" checked="checked" type="radio">#}
+{#        男#}
+{#      </label>#}
+{#      <label class="radio inline">#}
+{#        <input value="女" name="group" type="radio">#}
+{#        女#}
+{#      </label>#}
+{#  </div>#}
+{#        </div><div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">年龄</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">手机号</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="输入11位手机号" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">学校名称</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="输入学校全名" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{##}
+{#          <!-- Text input-->#}
+{#          <label class="control-label" for="input01">住址</label>#}
+{#          <div class="controls">#}
+{#            <input placeholder="输入住址" class="input-xlarge" type="text">#}
+{#            <p class="help-block"></p>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    <div class="control-group">#}
+{#          <label class="control-label">提交</label>#}
+{##}
+{#          <!-- Button -->#}
+{#          <div class="controls">#}
+{#            <button class="btn btn-info">提交信息</button>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#    </fieldset>#}
+{#  </form>#}
+
+
+
+
+
+{% endblock content%}
+

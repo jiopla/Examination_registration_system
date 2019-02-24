@@ -1,0 +1,26 @@
+{% extends 'cet46/base.html' %}
+
+{% block content %}
+<h1>修改用户信息</h1>
+<form method="post" action="{% url 'cet46:edit_cetForm' obj.id %}">
+    {% csrf_token %}
+    <input type="hidden"  name="nid" value="{{ obj.id }}">
+    <p><input type="text" name="username" placeholder="用户名" value="{{ obj.username }}"></p>
+    <p><input type="text" name="user_id" placeholder="身份证号" value="{{ obj.user_id }}"></p>
+    <p>
+        {% if obj.gender == 1 %}
+            男<input type="radio" name="gender" value="1" checked="{{ obj.gender }}">
+            女<input type="radio" name="gender" value="0" >
+        {% else %}
+            男<input type="radio" name="gender" value="1" >
+            女<input type="radio" name="gender" value="0" checked="{{ obj.gender }}">
+        {% endif %}
+    </p>
+    <p><input type="text" name="age" placeholder="年龄" value="{{ obj.age }}"></p>
+    <p><input type="text" name="phone" placeholder="手机号" value="{{ obj.phone }}"></p>
+    <p><input type="text" name="school" placeholder="学校" value="{{ obj.school }}"></p>
+    <p><input type="text" name="addr" placeholder="住址" value="{{ obj.addr }}"></p>
+
+    <p><input type="submit" value="提交修改"></p>
+</form>
+{% endblock content%}

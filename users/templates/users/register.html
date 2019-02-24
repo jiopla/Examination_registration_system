@@ -1,0 +1,16 @@
+{% extends 'cet46/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'users:register' %}">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+        {% buttons %}
+            <button name="submit" class="btn btn-primary">注册</button>
+        {% endbuttons %}
+
+      <input type="hidden" name="next" value="{% url 'cet46:index' %}">
+    </form>
+{% endblock content %}

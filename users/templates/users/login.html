@@ -1,0 +1,25 @@
+{% extends "cet46/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+    <h2 class="form-signin-heading">登录账户</h2>
+{% endblock header %}
+
+{% block content %}
+  {% if form.errors %}
+   <p>Your username and password didn't match.Please try agen.</p>
+  {% endif %}
+<div class="container">
+  <form method="post" action="{% url 'users:login' %}" class="form-signin">
+  	{% csrf_token %}
+{#  	{{form.as_p}}#}
+      {% bootstrap_form form %}
+
+      {% buttons %}
+          <button name="submit" class="btn btn-lg btn-primary btn-block">登录</button>
+      {% endbuttons %}
+  	<input type="hidden" name="next" value="{% url 'cet46:index' %}">
+  </form>
+</div>
+
+{% endblock content %}

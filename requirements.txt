@@ -1,0 +1,4 @@
+Django==2.0.4
+django-bootstrap3==10.0.1
+Pillow==5.1.0
+pytz==2018.4

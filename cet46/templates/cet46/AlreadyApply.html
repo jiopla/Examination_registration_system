@@ -1,0 +1,8 @@
+{% extends 'cet46/base.html' %}
+
+{% block content %}
+    <div class="alert alert-warning" role="alert">
+        <h4><strong>你已经报名考试!</strong> 请进入<a href="{% url 'cet46:personal_info' %}">查看个人信息</a></h4>
+    </div>
+    <p><h3></h3></p>
+{% endblock content %}

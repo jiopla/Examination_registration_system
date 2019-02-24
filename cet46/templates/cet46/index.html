@@ -1,0 +1,20 @@
+{% extends "cet46/base.html" %}
+{% load bootstrap3 %}
+
+
+{% block header %}
+{#    <style type="text/css">#}
+{#    div{background-image: url(32_3.jpg);}#}
+{#    </style>#}
+    <div class="jumbotron">
+      <center><h2>英语---不同语言，不同的思维方式</h2></center>
+    <p>轻量级英语考试报名系统</p>
+
+    <p><a class="btn btn-lg btn-success" href="{% url 'cet46:topic' %}" role="button">在线报名</a></p>
+
+    </div>
+
+{% endblock header %}
+{#{% block content %}#}
+{##}
+{#{% endblock content %}#}

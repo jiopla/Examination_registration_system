@@ -1,0 +1,13 @@
+{% extends 'cet46/base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="img">
+<button type="submit" class="btn btn-primary">上传</button>
+<input type="hidden" name="next" value="{% url 'cet46:index' %}">
+</form>
+
+{% endblock content %}

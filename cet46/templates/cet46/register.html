@@ -1,0 +1,12 @@
+{% extends 'cet46/base.html' %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'users:register' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button name="submit">register</button>
+      <input id="form_text" type="hidden" name="next" value="{% url 'cet46:index' %}">
+    </form>
+{% endblock content %}

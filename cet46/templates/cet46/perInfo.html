@@ -1,0 +1,50 @@
+{% extends "cet46/base.html" %}
+{% load  bootstrap3 %}
+
+{% block content %}
+{#    {% for row in CurrentCetList %}#}
+{#    {% if img_id == '' %}#}
+{#        <div class="alert alert-danger" role="alert">#}
+{#            <h4><strong>你还没上传图片!</strong> <a href="{% url 'cet46:UpLoadImg'  %}">上传图片</a></h4>#}
+{#        </div>#}
+{#    {% endif %}#}
+{#    {% endfor %}#}
+
+
+<div class="col-md-30">
+    <table  class="table table-bordered">
+        <thead>
+            <tr>
+                <th>姓名</th> <th>身份证号</th> <th>性别</th> <th>年龄</th>
+                <th>手机号</th> <th>学校</th> <th>住址</th> <th>考试类型</th> <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in CurrentCetList %}
+            <tr>
+{#                <td>{{ row.id }}</td>#}
+                <td>{{ row.username }}</td>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.age }}</td>
+                <td>{{ row.phone }}</td>
+                <td>{{ row.school }}</td>
+                <td>{{ row.addr }}</td>
+                {% if topic_id == 1 %}:
+                    <td>英语四级</td>
+                {% else %}
+                    <td>英语六级</td>
+                {% endif %}
+
+                <td><a href="{% url 'cet46:edit_cetForm' row.id %}">修改</a></td>
+{#                <td><a href="{% url 'cet46:UpLoadImg'  %}">上传图片</a></td>#}
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock content %}

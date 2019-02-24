@@ -1,0 +1,33 @@
+{% extends 'cet46/base.html' %}
+
+{% block content %}
+<div class="page-header">
+    <div class="alert alert-success">
+    <strong><h4>欢迎你!</h4></strong><strong>已报名</strong>考试，请你请进入
+            <a href="{% url 'cet46:personal_info'  %}">查看个人信息</a>
+    </div>
+     <div class="alert alert-warning">
+         <strong>未报名</strong>考试，请你继续报名考试
+      </div>
+</div>
+
+    <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">请选择报名考试类型：</h3>
+            </div>
+            <div class="panel-body">
+                  <ul>
+                      {% for topi in topic %}
+                          <li>
+                              <p><a href="{% url 'cet46:CetForms' topi.id %}">{{ topi }}</a></p>
+                          </li>
+{#      {% empty %}#}
+{#          <li>No CetTopics have been added yet.</li>#}
+                      {% endfor %}
+{#        <p><a href="{% url 'cet46:Apply' %}">报名</a></p>#}
+
+                  </ul>
+            </div>
+    </div>
+
+{% endblock content %}
